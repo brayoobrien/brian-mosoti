@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brian Mosoti — VA Trainer & Data Annotation Specialist</title>
+<meta name="description" content="Brian Mosoti helps businesses build reliable remote teams, train virtual assistants, and maintain high-quality data annotation workflows." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fafaf7; --fg:#161e2e; --muted:#6b7280; --card:#ffffff;
+    --border:#e5e7eb; --primary:#1a2540; --primary-fg:#fafaf7;
+    --accent:#1ea7c7; --accent-2:#3b82f6; --secondary:#f1f3f7;
+    --shadow-card:0 1px 3px rgba(22,30,46,.04), 0 8px 24px -8px rgba(22,30,46,.08);
+    --shadow-elegant:0 20px 60px -20px rgba(26,37,64,.25);
+    --radius:.75rem;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;border-color:var(--border)}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;letter-spacing:-.02em;font-weight:700;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .container{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+  .section{padding:5rem 0}
+  @media(min-width:1024px){.section{padding:7rem 0}}
+  .muted{color:var(--muted)}
+  .accent{color:var(--accent)}
+  .eyebrow{font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+  .text-gradient{background:linear-gradient(135deg,#1ea7c7,#3b82f6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.75rem 1.25rem;border-radius:.6rem;border:1px solid transparent;cursor:pointer;transition:all .25s;font-family:inherit}
+  .btn-primary{background:var(--primary);color:var(--primary-fg);box-shadow:var(--shadow-elegant)}
+  .btn-primary:hover{background:#243358}
+  .btn-outline{background:transparent;border-color:var(--border);color:var(--fg)}
+  .btn-outline:hover{background:var(--secondary)}
+  .btn-sm{padding:.5rem .9rem;font-size:.85rem}
+  .btn-lg{padding:.95rem 1.6rem;font-size:1rem}
+  .btn-block{width:100%;justify-content:center}
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(250,250,247,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(229,231,235,.6)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:4rem}
+  .logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.1rem}
+  .nav-links{display:none;gap:2rem;font-size:.9rem;font-weight:500;color:var(--muted)}
+  .nav-links a:hover{color:var(--fg)}
+  @media(min-width:768px){.nav-links{display:flex}}
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fafaf7,#f1f3f7)}
+  .hero .blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+  .hero .blob1{top:5rem;right:-10rem;width:500px;height:500px;background:rgba(30,167,199,.1)}
+  .hero .blob2{bottom:-5rem;left:-5rem;width:400px;height:400px;background:rgba(26,37,64,.1)}
+  .hero-inner{position:relative;max-width:48rem}
+  .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border-radius:999px;background:var(--card);border:1px solid var(--border);box-shadow:0 1px 2px rgba(0,0,0,.04);margin-bottom:2rem;font-size:.75rem;font-weight:500;color:var(--muted)}
+  .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;margin-bottom:1.25rem}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:38rem;margin-bottom:2.5rem;line-height:1.6}
+  .key-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-bottom:2.5rem;max-width:38rem}
+  @media(min-width:640px){.key-grid{grid-template-columns:repeat(3,1fr)}}
+  .key{display:flex;gap:.5rem;align-items:flex-start;padding:.75rem;background:var(--card);border:1px solid rgba(229,231,235,.6);border-radius:.6rem;box-shadow:var(--shadow-card);font-size:.85rem;font-weight:500}
+  .check{flex-shrink:0;width:1rem;height:1rem;color:var(--accent);margin-top:.15rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start}
+  @media(min-width:1024px){.about-grid{grid-template-columns:4fr 8fr;gap:3rem}}
+  .about-grid h2{font-size:clamp(1.75rem,3vw,2.25rem)}
+  .about-grid p{font-size:1.1rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.7}
+  /* generic section heading */
+  .head{max-width:36rem;margin-bottom:3.5rem}
+  .head h2{font-size:clamp(1.875rem,4vw,3rem)}
+  /* services */
+  .bg-soft{background:rgba(241,243,247,.5)}
+  .grid-2{display:grid;grid-template-columns:1fr;gap:1.25rem}
+  @media(min-width:768px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--card);border:1px solid rgba(229,231,235,.6);border-radius:var(--radius);box-shadow:var(--shadow-card);transition:all .3s}
+  .card:hover{box-shadow:var(--shadow-elegant);transform:translateY(-4px)}
+  .card-pad{padding:2rem}
+  .icon-tile{width:3rem;height:3rem;border-radius:.75rem;background:rgba(26,37,64,.05);border:1px solid rgba(26,37,64,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:var(--primary);transition:all .3s}
+  .card:hover .icon-tile{background:rgba(30,167,199,.1);border-color:rgba(30,167,199,.2);color:var(--accent)}
+  .card h3{font-size:1.2rem;margin-bottom:1rem}
+  .card ul{list-style:none}
+  .card ul li{display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.875rem;padding:.2rem 0}
+  .card ul li::before{content:"";width:.25rem;height:.25rem;border-radius:50%;background:var(--accent)}
+  /* projects */
+  .grid-3{display:grid;grid-template-columns:1fr;gap:1.5rem}
+  @media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+  .proj-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+  .tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+  .num{font-family:ui-monospace,monospace;font-size:.75rem;color:var(--muted)}
+  .proj-block{margin-bottom:1rem;font-size:.875rem}
+  .proj-block strong{display:block;margin-bottom:.25rem}
+  .proj-block p{color:var(--muted);line-height:1.6}
+  /* sample work */
+  .sample-card{overflow:hidden}
+  .sample-head{display:flex;align-items:center;gap:.75rem;padding:1rem 1.5rem;border-bottom:1px solid rgba(229,231,235,.6);background:rgba(241,243,247,.6);font-size:.875rem;font-weight:600}
+  .sample-head svg{color:var(--accent)}
+  .sample-body{padding:2rem}
+  .step{display:flex;gap:1rem;margin-bottom:1rem}
+  .step-k{flex-shrink:0;width:4rem;font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;padding-top:.15rem}
+  .step p{font-size:.875rem;color:var(--muted);line-height:1.6}
+  .train p{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+  .train strong{color:var(--fg)}
+  /* tools */
+  .grid-tools{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+  @media(min-width:768px){.grid-tools{grid-template-columns:repeat(4,1fr)}}
+  .tool{padding:1.25rem;border:1px solid rgba(229,231,235,.6);background:var(--card);border-radius:.75rem;text-align:center;font-weight:500;font-size:.875rem;transition:all .25s}
+  .tool:hover{border-color:rgba(30,167,199,.4);box-shadow:var(--shadow-card)}
+  /* certifications */
+  .cert .icon-tile{background:rgba(30,167,199,.1);border-color:rgba(30,167,199,.2);color:var(--accent)}
+  .cert h3{font-size:1rem;margin-bottom:.5rem}
+  .cert .issuer{font-size:.875rem;color:var(--muted);margin-top:auto}
+  .cert.card{display:flex;flex-direction:column;padding:1.75rem}
+  /* why hire */
+  .why{position:relative;background:var(--primary);color:var(--primary-fg);overflow:hidden}
+  .why::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#1a2540,#243358);opacity:.9}
+  .why::after{content:"";position:absolute;top:0;right:0;width:600px;height:600px;border-radius:50%;background:rgba(30,167,199,.1);filter:blur(80px)}
+  .why .container{position:relative;z-index:1}
+  .why-card{display:flex;gap:1rem;align-items:flex-start;padding:1.5rem;background:rgba(250,250,247,.05);border:1px solid rgba(250,250,247,.1);border-radius:.75rem;backdrop-filter:blur(8px)}
+  .why-icon{flex-shrink:0;width:2.5rem;height:2.5rem;border-radius:.5rem;background:rgba(30,167,199,.2);color:var(--accent);display:flex;align-items:center;justify-content:center}
+  .why-card p{font-size:1.1rem;font-weight:500;padding-top:.3rem}
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start}
+  @media(min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr;gap:5rem}}
+  .contact-grid h2{font-size:clamp(1.875rem,4vw,3rem);margin-bottom:1.5rem}
+  .contact-grid > div > p.lead{font-size:1.1rem;margin-bottom:2.5rem}
+  .contact-link{display:flex;align-items:center;gap:1rem;padding:1.25rem;border:1px solid rgba(229,231,235,.6);background:var(--card);border-radius:.75rem;margin-bottom:1rem;transition:all .25s}
+  .contact-link:hover{border-color:rgba(30,167,199,.4);box-shadow:var(--shadow-card)}
+  .contact-icon{width:2.75rem;height:2.75rem;border-radius:.5rem;background:rgba(30,167,199,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-link span{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;display:block}
+  .contact-link b{font-weight:500}
+  .form-card{padding:2rem;box-shadow:var(--shadow-elegant)}
+  .form-row{margin-bottom:1.25rem}
+  .form-row label{display:block;font-size:.875rem;font-weight:600;margin-bottom:.5rem}
+  .form-row input,.form-row textarea{width:100%;padding:.65rem .85rem;border:1px solid var(--border);border-radius:.5rem;font-family:inherit;font-size:.95rem;background:var(--bg);color:var(--fg);transition:border .2s}
+  .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent)}
+  .form-row textarea{resize:vertical;min-height:120px}
+  /* footer */
+  footer{border-top:1px solid rgba(229,231,235,.6);padding:2.5rem 0}
+  .foot{display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:space-between;font-size:.875rem;color:var(--muted)}
+  @media(min-width:768px){.foot{flex-direction:row}}
+  .foot .logo{color:var(--fg)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">Brian<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#tools">Tools</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="container section">
+    <div class="hero-inner">
+      <div class="pill"><span class="dot"></span>Available for new projects</div>
+      <h1 class="h1">Virtual Assistant Trainer & <span class="text-gradient">Data Annotation</span> Specialist</h1>
+      <p class="lead">I help businesses build reliable remote teams, improve workflows, and maintain high-quality task execution.</p>
+      <div class="key-grid">
+        <div class="key"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>VA Training & Onboarding Systems</div>
+        <div class="key"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Data Annotation & Quality Assurance</div>
+        <div class="key"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Workflow & SOP Development</div>
+      </div>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary btn-lg">Work With Me →</a>
+        <a href="#work" class="btn btn-outline btn-lg">View Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Building the operational layer behind great remote teams.</h2>
+    </div>
+    <div>
+      <p>I'm Brian Mosoti. I specialize in training virtual assistants and building the systems that make remote work actually work — clear processes, dependable handoffs, and outputs you can trust.</p>
+      <p>My background in data annotation and quality review taught me that consistency isn't a personality trait — it's a system. I design those systems: SOPs that stick, onboarding that ramps people up fast, and review loops that catch errors before they reach the client.</p>
+      <p>I work remotely with structured workflows, an obsession with accuracy, and a focus on helping teams scale without losing quality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section bg-soft">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Services</p>
+      <h2>What I do for clients.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card card-pad">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Virtual Assistant Training</h3>
+        <ul><li>Onboarding systems</li><li>Task simplification</li><li>Performance improvement</li></ul>
+      </div>
+      <div class="card card-pad">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="9" y="15" width="6" height="6" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></div>
+        <h3>Workflow & SOP Creation</h3>
+        <ul><li>Step-by-step processes</li><li>Task documentation</li><li>System structuring</li></ul>
+      </div>
+      <div class="card card-pad">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></div>
+        <h3>Data Annotation & QA</h3>
+        <ul><li>Data labeling</li><li>Accuracy review</li><li>Quality control systems</li></ul>
+      </div>
+      <div class="card card-pad">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 12l2 2 4-4"/></svg></div>
+        <h3>Administrative Support Systems</h3>
+        <ul><li>Data entry workflows</li><li>Research systems</li><li>Task tracking</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work" class="section">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Selected Work</p>
+      <h2>Projects that turned chaos into systems.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card card-pad">
+        <div class="proj-head"><span class="tag">Quality System</span><span class="num">01</span></div>
+        <h3 style="margin-bottom:1.5rem">Data Annotation Quality System</h3>
+        <div class="proj-block"><strong>Problem</strong><p>Inconsistent dataset quality across a distributed annotation team.</p></div>
+        <div class="proj-block"><strong>Approach</strong><p>Designed a structured multi-stage review process with clear labeling criteria.</p></div>
+        <div class="proj-block"><strong>Outcome</strong><p>Higher labeling accuracy and a measurable drop in review-stage errors.</p></div>
+      </div>
+      <div class="card card-pad">
+        <div class="proj-head"><span class="tag">Training</span><span class="num">02</span></div>
+        <h3 style="margin-bottom:1.5rem">VA Training Framework</h3>
+        <div class="proj-block"><strong>Problem</strong><p>Long ramp-up times and repeated mistakes during VA onboarding.</p></div>
+        <div class="proj-block"><strong>Approach</strong><p>Broke complex workflows into clear, repeatable steps with a guided onboarding path.</p></div>
+        <div class="proj-block"><strong>Outcome</strong><p>Shorter training cycles and confident assistants from week one.</p></div>
+      </div>
+      <div class="card card-pad">
+        <div class="proj-head"><span class="tag">Operations</span><span class="num">03</span></div>
+        <h3 style="margin-bottom:1.5rem">Remote Workflow Optimization</h3>
+        <div class="proj-block"><strong>Problem</strong><p>Scattered task ownership and slow handoffs across a remote team.</p></div>
+        <div class="proj-block"><strong>Approach</strong><p>Centralized task tracking, clear roles, and tight communication rituals.</p></div>
+        <div class="proj-block"><strong>Outcome</strong><p>Faster delivery, clearer accountability, and smoother coordination.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE WORK -->
+<section class="section bg-soft">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Sample Work</p>
+      <h2>How I document and train.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card sample-card">
+        <div class="sample-head">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          SOP — Weekly Lead Research
+        </div>
+        <div class="sample-body">
+          <div class="step"><div class="step-k">Step 1</div><p>Open the Lead Tracker sheet and filter by 'Pending' status.</p></div>
+          <div class="step"><div class="step-k">Step 2</div><p>For each entry, verify the company URL and capture the decision-maker's name.</p></div>
+          <div class="step"><div class="step-k">Step 3</div><p>Add verified contact details into the assigned columns. Leave blanks where unsure.</p></div>
+          <div class="step"><div class="step-k">Step 4</div><p>Mark the row as 'Ready for QA' and notify the reviewer in Slack.</p></div>
+          <div class="step" style="margin-bottom:0"><div class="step-k">Step 5</div><p>Log completion time and any blockers in the daily standup note.</p></div>
+        </div>
+      </div>
+      <div class="card sample-card">
+        <div class="sample-head">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Training Note — Image Annotation Basics
+        </div>
+        <div class="sample-body train">
+          <p><strong>What you're doing:</strong> drawing a tight box around every car in the image so the model learns what "car" looks like.</p>
+          <p><strong>Rules:</strong> the box must touch the edges of the car — no extra space, no missing wheels. If two cars overlap, label them separately.</p>
+          <p><strong>When unsure:</strong> skip the image and flag it in the QA channel. It's better to skip than to guess.</p>
+          <p style="margin-bottom:0"><strong>Goal:</strong> 95%+ accuracy. Speed comes after accuracy — never before it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="section">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Tools</p>
+      <h2>The stack I use to keep teams aligned.</h2>
+    </div>
+    <div class="grid-tools">
+      <div class="tool">Google Docs</div>
+      <div class="tool">Google Sheets</div>
+      <div class="tool">Notion</div>
+      <div class="tool">Trello</div>
+      <div class="tool">ClickUp</div>
+      <div class="tool">Slack</div>
+      <div class="tool">Asana</div>
+      <div class="tool">Annotation Platforms</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section bg-soft">
+  <div class="container">
+    <div class="head">
+      <p class="eyebrow">Certifications</p>
+      <h2>Trained, certified, and continually sharpening the craft.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card cert">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg></div>
+        <h3>Certified Virtual Assistant Professional</h3>
+        <p class="issuer">MyRemoteVA Academy</p>
+      </div>
+      <div class="card cert">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg></div>
+        <h3>Professional Virtual Assistant Certification</h3>
+        <p class="issuer">Virtual Assistant Institute</p>
+      </div>
+      <div class="card cert">
+        <div class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg></div>
+        <h3>CPD Accredited Virtual Assistant Course</h3>
+        <p class="issuer">Apex Learning</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HIRE ME -->
+<section class="section why">
+  <div class="container">
+    <div class="head" style="color:#fafaf7">
+      <p class="eyebrow">Why Hire Me</p>
+      <h2>I don't just hand off tasks. I hand off systems.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div><p>I build systems, not just complete tasks.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p>I train teams to become efficient and independent.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><p>I focus on accuracy, structure, and scalability.</p></div>
+      <div class="why-card"><div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.94 14.34a4 4 0 1 1 5.66-5.66M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></div><p>I understand both execution and training.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container contact-grid">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build a reliable remote team together.</h2>
+      <p class="lead">Tell me about your team, your workflows, or the data quality problem you're trying to solve. I'll get back to you within 24 hours.</p>
+      <a class="contact-link" href="mailto:brianmosoti30@gmail.com">
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+        <div><span>Email</span><b>brianmosoti30@gmail.com</b></div>
+      </a>
+      <a class="contact-link" href="https://wa.me/254728521478" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><span>Phone / WhatsApp</span><b>+254 728 521 478</b></div>
+      </a>
+    </div>
+    <form class="card form-card" onsubmit="event.preventDefault();var n=this.name.value,e=this.email.value,m=this.message.value;window.location.href='mailto:brianmosoti30@gmail.com?subject='+encodeURIComponent('New inquiry from '+n)+'&body='+encodeURIComponent(m+'\n\n— '+n+' ('+e+')');">
+      <div class="form-row"><label>Name</label><input name="name" required placeholder="Your full name" /></div>
+      <div class="form-row"><label>Email</label><input name="email" type="email" required placeholder="you@company.com" /></div>
+      <div class="form-row"><label>How can I help?</label><textarea name="message" required placeholder="Tell me about your team and what you need..."></textarea></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <p class="logo">Brian Mosoti<span class="accent">.</span></p>
+    <p>© <span id="y"></span> Brian Mosoti. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
